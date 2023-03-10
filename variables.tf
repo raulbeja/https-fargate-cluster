@@ -49,7 +49,7 @@ variable "inet_cidr_block" {
 variable "ecs_service_name" {
   description = "Application service name"
   type        = string 
-  default     = "fargate-nginx"
+  default     = "apache"
 }
 
 variable "ecs_task_memory" {
@@ -79,5 +79,5 @@ variable "docker_container_port" {
 variable "docker_image" {
   description = "Docker Image URL"
   type        = string
-  default = "nginx:latest"
+  default = "httpd:latest"
 }
