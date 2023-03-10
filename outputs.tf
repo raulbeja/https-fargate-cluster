@@ -1,3 +1,11 @@
+output "account_id" {
+  value = data.aws_caller_identity.current.account_id
+}
+
+output "region" {
+  value = var.aws_region
+}
+
 output "vpc_id" {
   value = aws_vpc.vpc.id
 }
@@ -26,6 +34,10 @@ output "ecs_cluster_name" {
   value = aws_ecs_cluster.ecs_fargate_cluster.name
 }
 
+output "ecs_service_name" {
+  value = aws_ecs_service.ecs_service.name
+}
+
 output "ecs_cluster_role_name" {
   value = aws_iam_role.fargate_iam_role.name
 }
@@ -38,6 +50,9 @@ output "ecs_domain_name" {
   value = var.ecs_domain_name
 }
 
+output "docker_image" {
+  value = var.docker_image
+}
 output "ecs_endpoint" {
   value = "https://${var.ecs_cluster_name}.${var.ecs_domain_name}"
 }
